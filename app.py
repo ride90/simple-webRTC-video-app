@@ -33,7 +33,9 @@ class IndexHandler(RequestHandler):
 
 class NodeHandler(RequestHandler):
     def get(self, slug):
-        self.render('node.html', nodes=())
+        self.render('node.html',
+                    current_node=slug,
+                    nodes=[n.name for n in GLOBAL_NODES.values() if n.name != slug])
 
 
 class Node(object):

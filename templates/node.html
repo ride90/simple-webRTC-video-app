@@ -70,8 +70,23 @@
             <p id="traceback" class="bg-info"></p>
 
             <p>
+            <a class="btn" href="/">
+                <button type="button" class="btn btn-success">
+                    <span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
+                    Generate node
+                </button>
+            </a>
+            <button type="button" class="btn btn-primary">
+                <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
+                {{current_node}}
+            </button>
             {% for node in nodes %}
-                <a href="/node/{{node}}">NODE: {{node}}</a><br/>
+                <a class="btn" href="/node/{{node}}">
+                    <button type="button" class="btn btn-info">
+                        <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span>
+                        {{node}}
+                    </button>
+                </a>
             {% end %}
             </p>
         </div>
