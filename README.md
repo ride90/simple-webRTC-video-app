@@ -1,2 +1,2 @@
 # simple-webRTC-video-app
-webRTC + python + tornado = love
+webRTC + python + tornado = video app which works
