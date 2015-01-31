@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Simple webRTC app using Tornado we server</title>
+
+    <link href="{{ static_url('libs/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ static_url('css/node.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="{{ static_url('libs/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ static_url('js/webrtc-adapter.js') }}"></script>
+    <script src="{{ static_url('js/main.js') }}"></script>
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="container well">
+        <div class="col-md-1">
+            <h3>Links</h3>
+            <p><a href="http://en.wikipedia.org/wiki/WebRTC" target="_blank">WebRTC</a></p>
+            <p><a href="http://en.wikipedia.org/wiki/Tornado_%28web_server%29" target="_blank">Tornado</a></p>
+        </div>
+        <div class="col-md-11">
+
+            <div class="container">
+                <div class="col-md-3">
+                   <img height="150px" src="{{ static_url('media/pig.png') }}" alt="webrtc" class="img-rounded">
+                </div>
+                <div class="col-md-9">
+                    <img width="600px" src="{{ static_url('media/WebRTC.png') }}" alt="webrtc" class="img-rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bs-docs-container">
+        <div class="row">
+            <div class="videos">
+                <div class="col-md-9">
+                    <h2>Remote</h2>
+                    <video id="remote" autoplay></video>
+                </div>
+                <div class="col-md-3">
+                    <h2>Local</h2>
+                    <video id="local" autoplay muted></video>
+                </div>
+            </div>
+        </div>
+        <div class="well">
+            <p id="traceback" class="bg-info"></p>
+
+            <p>
+            {% for node in nodes %}
+                <a href="/node/{{node}}">NODE: {{node}}</a><br/>
+            {% end %}
+            </p>
+        </div>
+    </div>
+
+    <footer class="bs-docs-footer" role="contentinfo">
+        <div class="container bs-docs-container">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <p>Simple webRTC app using Tornado we server</p>
+                    <p>src <a href="https://github.com/OlegPshenichniy/simple-webRTC-video-app">Github Oleg Pshenichniy</a></p>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
