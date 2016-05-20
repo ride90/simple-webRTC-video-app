@@ -1,10 +1,10 @@
 var initiator;
 var pc;
 var ws = new WebSocket(location.href.replace('http', 'ws').replace('node', 'wbsckt'));
-var PeerConnection = window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
-var IceCandidate = window.mozRTCIceCandidate || window.RTCIceCandidate;
-var SessionDescription = window.mozRTCSessionDescription || window.RTCSessionDescription;
-navigator.getUserMedia = navigator.getUserMedia || navigator.mozGetUserMedia || navigator.webkitGetUserMedia;
+var PeerConnection = window.RTCPeerConnection || window.webkitRTCPeerConnection;
+var IceCandidate = window.RTCIceCandidate || window.RTCIceCandidate;
+var SessionDescription = window.RTCSessionDescription || window.RTCSessionDescription;
+navigator.getUserMedia = navigator.getUserMedia || navigator.mediaDevices.getUserMedia || navigator.webkitGetUserMedia;
 
 function socketCallback(event) {
     if (event.data == "magic_overload") {
